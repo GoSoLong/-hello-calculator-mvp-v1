@@ -21,6 +21,7 @@ function render() {
   dom.display.textContent = model.currentInput;
   dom.expression.textContent = model.buildExpression();
   dom.display.classList.toggle('is-error', model.error);
+  dom.display.classList.toggle('is-result', !model.error && model.justCalculated);
   dom.statusBadge.textContent = model.error ? 'Error' : 'Ready';
   dom.statusBadge.classList.toggle('error', model.error);
 

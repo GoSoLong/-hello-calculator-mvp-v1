@@ -4,6 +4,8 @@
   --surface-soft: #f8fafc;
   --text: #172033;
   --muted: #667085;
+  --display-input-color: #2563eb;
+  --display-result-color: #0f172a;
   --line: #d8e0ea;
   --accent: #2558c7;
   --accent-soft: #e9f0ff;
@@ -176,11 +178,15 @@ h1 {
 .main-display {
   min-height: 72px;
   padding: 2px 14px 12px;
-  color: #111827;
+  color: var(--display-input-color);
   font-size: clamp(2.25rem, 11vw, 3.4rem);
   font-variant-numeric: tabular-nums;
   font-weight: 750;
   letter-spacing: -.045em;
+}
+
+.main-display.is-result {
+  color: var(--display-result-color);
 }
 
 .main-display.is-error { color: var(--danger); font-size: clamp(1.7rem, 8vw, 2.3rem); }
