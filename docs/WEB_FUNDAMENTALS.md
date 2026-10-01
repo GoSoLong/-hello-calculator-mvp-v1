@@ -27,7 +27,7 @@ Luồng tương tác chính:
 - `<meta charset="utf-8">` giúp hiển thị tiếng Việt và ký tự toán học đúng.
 - Thẻ viewport giúp trang dùng chiều rộng thiết bị thật trên điện thoại.
 - `<meta name="description">` mô tả nội dung trang; `<title>` đặt tiêu đề tab trình duyệt.
-- CSS và JavaScript được liên kết bằng đường dẫn tương đối. `type="module"` cho phép `app.js` dùng `import`/`export` và module được thực thi sau khi HTML được phân tích.
+- CSS và JavaScript được liên kết bằng đường dẫn tương đối. Query `?v=1.1.0` tạo URL asset riêng theo release để tránh trình duyệt giữ file cũ trong cache. `type="module"` cho phép `app.js` dùng `import`/`export` và module được thực thi sau khi HTML được phân tích.
 
 ### Ngữ nghĩa và khả năng truy cập
 
@@ -112,9 +112,9 @@ JavaScript `Number` dùng số dấu phẩy động nhị phân, nên một số
 
 | Kiến thức | Ánh xạ trong phiên bản 1.1 |
 |---|---|
-| HTML | Hai `<button>` mang `data-action="sign"` và `data-action="percent"`; `aria-label` mô tả tác vụ cho trình đọc màn hình. |
+| HTML | Hai `<button>` mang `data-action="sign"` và `data-action="percent"`; `aria-label` mô tả tác vụ cho trình đọc màn hình. URL CSS/JS có query version để tránh cache asset cũ. |
 | CSS | `.utility-row` dùng Grid hai cột; bỏ `min-width` cứng trên `body` để viewport 320px không bị cuộn ngang. |
-| JavaScript | Event delegation nhận nút trong `.calculator-card`; `keydown` ánh xạ `F9` và `Shift+5`; `handleAction()` chuyển action tới `CalculatorModel`. |
+| JavaScript | Event delegation nhận nút trong `.calculator-card`; `keydown` ánh xạ `F9` và `Shift+5`; `handleAction()` chuyển action tới `CalculatorModel`; ES module import model với cùng version cache. |
 | State/model | `toggleSign()` hỗ trợ cả số đang nhập lẫn toán hạng kế tiếp; `percent()` chia giá trị hiện tại cho 100; nhập chữ số sau `-0` tạo số âm đúng. |
 | Kiểm thử | Node kiểm tra model; browser kiểm tra click, phím tắt, lỗi Console và nhiều viewport. |
 

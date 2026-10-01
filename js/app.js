@@ -1,6 +1,6 @@
 'use strict';
 
-import { CalculatorModel } from './calculator.js';
+import { CalculatorModel } from './calculator.js?v=1.1.0';
 
 const model = new CalculatorModel();
 

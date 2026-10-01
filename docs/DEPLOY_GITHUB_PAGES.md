@@ -51,6 +51,7 @@ URL thường có dạng:
 - Chạy lại các test trong `docs/TEST_CASES.md`.
 - Mở DevTools → Console và xác nhận không có lỗi JavaScript.
 - DevTools → Toggle device toolbar → kiểm tra viewport 320, 375, 768 px.
+- Khi phát hành phiên bản mới, tăng query `?v=` trên CSS, entry module và import model để tránh cache asset của bản cũ.
 
 ## 6. Cập nhật phiên bản sau
 
