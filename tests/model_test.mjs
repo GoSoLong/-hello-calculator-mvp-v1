@@ -46,4 +46,22 @@ assert.equal(m.currentInput, '0');
 assert.equal(m.firstOperand, null);
 assert.equal(m.operator, null);
 
-console.log('PASS: 12 calculator model tests');
+m = run([['number', '8'], ['sign', '±']]);
+assert.equal(m.currentInput, '-8');
+
+m = run([['number', '8'], ['sign', '±'], ['sign', '±']]);
+assert.equal(m.currentInput, '8');
+
+m = run([['number', '2'], ['number', '5'], ['percent', '%']]);
+assert.equal(m.currentInput, '0.25');
+
+m = run([['number', '5'], ['operator', '+'], ['number', '2'], ['sign', '±'], ['equals', '=']]);
+assert.equal(m.currentInput, '3');
+
+m = run([['number', '5'], ['operator', '+'], ['sign', '±'], ['number', '6'], ['equals', '=']]);
+assert.equal(m.currentInput, '-1');
+
+m = run([['sign', '±'], ['number', '6']]);
+assert.equal(m.currentInput, '-6');
+
+console.log('PASS: 18 calculator model tests');

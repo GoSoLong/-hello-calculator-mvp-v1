@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Hello Calculator MVP v1.0 - ứng dụng Web nhỏ để học HTML, CSS, JavaScript, DOM, Event và State." />
-  <title>Hello Calculator MVP v1.0</title>
+  <meta name="description" content="Hello Calculator MVP v1.1 - ứng dụng Web học HTML, CSS, JavaScript, DOM, Event và State." />
+  <title>Hello Calculator MVP v1.1</title>
   <link rel="stylesheet" href="css/style.css" />
   <script type="module" src="js/app.js"></script>
 </head>
@@ -16,7 +16,7 @@
         <h1 id="app-title">Hello Calculator</h1>
         <p class="subtitle">HTML <span aria-hidden="true">•</span> CSS <span aria-hidden="true">•</span> JavaScript</p>
       </div>
-      <span class="version-badge" aria-label="Phiên bản 1.0">MVP v1.0</span>
+      <span class="version-badge" aria-label="Phiên bản 1.1">MVP v1.1</span>
     </header>
 
     <section class="learning-goal" aria-labelledby="learning-goal-title">
@@ -33,6 +33,11 @@
       <div class="display-panel" aria-label="Màn hình calculator">
         <div id="expression" class="expression" aria-label="Biểu thức hiện tại">&nbsp;</div>
         <div id="display" class="main-display" role="status" aria-live="polite" aria-atomic="true">0</div>
+      </div>
+
+      <div class="utility-row" aria-label="Thao tác bổ sung">
+        <button class="key key-control key-utility" type="button" data-action="sign" aria-label="Đổi dấu">±</button>
+        <button class="key key-control key-utility" type="button" data-action="percent" aria-label="Chia giá trị cho 100">%</button>
       </div>
 
       <div id="keypad" class="keypad" aria-label="Bàn phím calculator">
@@ -60,7 +65,7 @@
         <button class="key key-number" type="button" data-action="decimal" data-value=".">.</button>
       </div>
 
-      <p class="keyboard-hint"><strong>Mẹo:</strong> Có thể dùng bàn phím: 0–9, +, -, *, /, Enter, Backspace, Escape.</p>
+      <p class="keyboard-hint"><strong>Mẹo:</strong> Dùng 0–9, +, -, *, /, Enter, Backspace, Escape; F9 đổi dấu, Shift+5 (%) chia giá trị cho 100.</p>
     </section>
 
     <details id="learning-panel" class="learning-panel" open>
@@ -84,7 +89,7 @@
     </section>
 
     <footer class="app-footer">
-      <p>Hello Calculator MVP v1.0 · A teaching project for Web fundamentals FIXED.</p>
+      <p>Hello Calculator MVP v1.1 · A teaching project for Web fundamentals.</p>
     </footer>
   </main>
 </body>

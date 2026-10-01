@@ -1,27 +1,24 @@
 # Triển khai Hello Calculator lên GitHub Pages
 
-## 1. Tạo repository
+## 1. Repository đích
 
-Gợi ý tên repository:
+Repository đang dùng:
 
-`hello-calculator-mvp-v1`
+`GoSoLong/-hello-calculator-mvp-v1`
 
-Tạo repository trên GitHub. Với GitHub Free, dùng repository **Public** nếu muốn dùng GitHub Pages theo cách đơn giản nhất.
+Nếu tạo repository mới trên GitHub Free, dùng repository **Public** để bật Pages theo cách đơn giản nhất.
 
-## 2. Đưa source lên GitHub bằng Git
+## 2. Đẩy phiên bản lên GitHub
 
-Trong Terminal tại thư mục project:
+Trong Terminal tại thư mục project, stage source (không stage tài liệu PDF hoặc file phát sinh không thuộc source), commit và push:
 
 ```bash
-git init
-git add .
-git commit -m "Initial Hello Calculator MVP v1.0"
-git branch -M main
-git remote add origin https://github.com/USERNAME/hello-calculator-mvp-v1.git
-git push -u origin main
+git add README.md index.html css js docs tests
+git commit -m "Release Hello Calculator MVP v1.1"
+git push origin main
 ```
 
-Thay `USERNAME` bằng GitHub username thật.
+Remote `origin` của project này đã trỏ đến repository ở trên.
 
 ## 3. Bật GitHub Pages
 
@@ -45,7 +42,7 @@ Sau khi deploy thành công, vào:
 
 URL thường có dạng:
 
-`https://USERNAME.github.io/hello-calculator-mvp-v1/`
+`https://gosolong.github.io/-hello-calculator-mvp-v1/`
 
 ## 5. Kiểm thử online
 
@@ -58,9 +55,9 @@ URL thường có dạng:
 ## 6. Cập nhật phiên bản sau
 
 ```bash
-git add .
-git commit -m "Improve calculator UI"
-git push
+git add README.md index.html css js docs tests
+git commit -m "Update Hello Calculator"
+git push origin main
 ```
 
 GitHub Pages sẽ tự triển khai lại từ branch `main`.

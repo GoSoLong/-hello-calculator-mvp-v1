@@ -1,4 +1,4 @@
-# Hello Calculator MVP v1.0
+# Hello Calculator MVP v1.1
 
 Một Web App calculator nhỏ phục vụ giảng dạy các khái niệm nền tảng:
 
@@ -12,10 +12,15 @@ Một Web App calculator nhỏ phục vụ giảng dạy các khái niệm nền
 - `=`
 - `C` để reset
 - `⌫` để xóa ký tự cuối
+- `±` đổi dấu và `%` chia giá trị đang hiển thị cho 100
 - Xử lý chia cho 0 → `Error`
 - Responsive từ viewport khoảng 320 px
-- Keyboard: `0–9`, `+`, `-`, `*`, `/`, `Enter`, `Backspace`, `Escape`
+- Keyboard: `0–9`, `+`, `-`, `*`, `/`, `Shift+5 (%)`, `F9`, `Enter`, `Backspace`, `Escape`
 - Developer / Learning Panel hiển thị Event và State
+
+## Kiến thức nền tảng
+
+Xem [Tổng hợp HTML, CSS và JavaScript cho Calculator MVP](docs/WEB_FUNDAMENTALS.md) để hiểu kiến trúc và cách trình bày các thay đổi v1.1 theo từng lớp HTML, CSS, JavaScript.
 
 ## Cấu trúc source
 
@@ -29,7 +34,8 @@ hello-calculator-mvp-v1.0/
 │   └── calculator.js
 ├── docs/
 │   ├── DEPLOY_GITHUB_PAGES.md
-│   └── TEST_CASES.md
+│   ├── TEST_CASES.md
+│   └── WEB_FUNDAMENTALS.md
 ├── tests/
 │   └── model_test.mjs
 ├── .nojekyll

@@ -5,6 +5,7 @@ import { CalculatorModel } from './calculator.js';
 const model = new CalculatorModel();
 
 const dom = {
+  calculator: document.querySelector('.calculator-card'),
   keypad: document.querySelector('#keypad'),
   display: document.querySelector('#display'),
   expression: document.querySelector('#expression'),
@@ -42,14 +43,16 @@ function handleAction(action, value, eventName = 'click') {
   render();
 }
 
-dom.keypad.addEventListener('click', (event) => {
+dom.calculator.addEventListener('click', (event) => {
   const button = event.target.closest('button[data-action]');
   if (!button) return;
   handleAction(button.dataset.action, button.dataset.value, 'click');
 });
 
 window.addEventListener('keydown', (event) => {
-  if (/^[0-9]$/.test(event.key)) {
+  if (event.key === '%' || (event.shiftKey && event.code === 'Digit5')) {
+    handleAction('percent', '%', 'keydown');
+  } else if (/^[0-9]$/.test(event.key)) {
     handleAction('number', event.key, 'keydown');
   } else if (event.key === '.') {
     handleAction('decimal', '.', 'keydown');
@@ -63,6 +66,9 @@ window.addEventListener('keydown', (event) => {
     handleAction('backspace', '⌫', 'keydown');
   } else if (event.key === 'Escape') {
     handleAction('clear', 'C', 'keydown');
+  } else if (event.key === 'F9') {
+    event.preventDefault();
+    handleAction('sign', '±', 'keydown');
   }
 });
 

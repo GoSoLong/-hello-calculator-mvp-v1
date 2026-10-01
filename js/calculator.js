@@ -38,7 +38,11 @@ export class CalculatorModel {
       return;
     }
 
-    this.currentInput = this.currentInput === '0' ? digit : this.currentInput + digit;
+    if (this.currentInput === '-0') {
+      this.currentInput = `-${digit}`;
+    } else {
+      this.currentInput = this.currentInput === '0' ? digit : this.currentInput + digit;
+    }
   }
 
   inputDecimal() {
@@ -129,6 +133,23 @@ export class CalculatorModel {
     }
   }
 
+  toggleSign() {
+    if (this.error) return;
+    if (this.waitingForOperand) {
+      this.currentInput = '-0';
+      this.waitingForOperand = false;
+      return;
+    }
+    this.currentInput = this.currentInput.startsWith('-')
+      ? this.currentInput.slice(1)
+      : `-${this.currentInput}`;
+  }
+
+  percent() {
+    if (this.error || this.waitingForOperand) return;
+    this.currentInput = this.formatResult(Number(this.currentInput) / 100);
+  }
+
   setError(expression = '') {
     this.currentInput = 'Error';
     this.firstOperand = null;
@@ -169,6 +190,8 @@ export class CalculatorModel {
       case 'equals': this.performEquals(); break;
       case 'clear': this.reset(); break;
       case 'backspace': this.backspace(); break;
+      case 'sign': this.toggleSign(); break;
+      case 'percent': this.percent(); break;
     }
   }
 }

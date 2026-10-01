@@ -27,7 +27,6 @@ html { color-scheme: light; }
 
 body {
   margin: 0;
-  min-width: 320px;
   min-height: 100vh;
   background:
     radial-gradient(circle at 20% 0%, rgba(37,88,199,.10), transparent 28rem),
@@ -197,6 +196,13 @@ h1 {
   gap: var(--gap);
 }
 
+.utility-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap);
+  margin-bottom: var(--gap);
+}
+
 .key {
   min-height: 58px;
   border: 1px solid #d2dbe7;
@@ -226,6 +232,7 @@ h1 {
 
 .key-control { background: #f3f4f6; color: #374151; }
 .key-control[data-action="clear"] { color: var(--danger); }
+.key-utility { min-height: 46px; }
 
 .key-equal {
   grid-column: 4;
